@@ -17,15 +17,15 @@ This application demonstrates a complete workflow from data ingestion to embeddi
 ## Installation
 
 ### Prerequisites
-- Python 3.8+
+- Python 3.9+
 - AWS Account with access to Bedrock
 - Docker (optional, for containerized deployment)
 
 ### Steps
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/your-repo.git
-    cd your-repo
+    git clone https://github.com/S1000-bit/Automated_Grading_System.git
+    cd Automated_Grading_System
     ```
 
 2. Install the required Python packages:
