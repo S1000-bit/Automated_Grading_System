@@ -1,6 +1,3 @@
-# Writing the README content to a readme.md file
-
-
 # Automated Grading Software
 
 This project provides an automated grading system that uses computer vision to assess answer sheets and a BERT transformer model to evaluate written answers based on similarity scores.
