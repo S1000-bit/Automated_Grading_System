@@ -1,79 +1,49 @@
-# AWS Bedrock Application
+# Writing the README content to a readme.md file
 
-This project leverages AWS Bedrock and Langchain to perform data ingestion, create embeddings, and build a vector store for efficient retrieval-based QA.
 
-## Table of Contents
-- [Project Overview](#project-overview)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Files Description](#files-description)
-- [Docker Setup](#docker-setup)
-- [License](#license)
+# Automated Grading Software
+
+This project provides an automated grading system that uses computer vision to assess answer sheets and a BERT transformer model to evaluate written answers based on similarity scores.
 
 ## Project Overview
 
-This application demonstrates a complete workflow from data ingestion to embedding creation and QA retrieval using AWS Bedrock and Langchain. The main components include data ingestion, creating vector embeddings, setting up a retrieval-based QA system, and integrating with a Streamlit web interface.
+The automated grading software processes scanned answer sheets using OpenCV to identify answer bubbles and written responses. For objective answers (such as multiple-choice), the system detects selected options and grades them based on a predefined answer key. For subjective answers, the project leverages a BERT transformer model to compute a similarity score against model answers, producing a grade based on semantic similarity.
 
-## Installation
+## Features
+
+- **Objective Answer Recognition**: Utilizes OpenCV to locate and identify marked bubbles on scanned answer sheets.
+- **Written Answer Grading**: Uses a similarity index based on a BERT transformer to assess written answers against model answers.
+- **Automated Grading**: Grades are assigned based on both objective and subjective answer evaluations.
+
+## Project Structure
+
+- **cv.py**: Contains computer vision functions using OpenCV to detect answer bubbles and parse the answer sheets.
+- **main.py**: The main script to execute the grading pipeline, combining the CV and NLP components for a comprehensive grading solution.
+
+## Getting Started
 
 ### Prerequisites
-- Python 3.9+
-- AWS Account with access to Bedrock
-- Docker (optional, for containerized deployment)
 
-### Steps
-1. Clone the repository:
-    ```sh
-    git clone https://github.com/S1000-bit/Automated_Grading_System.git
-    cd Automated_Grading_System
-    ```
+- Python 3.8+
+- OpenCV
+- Transformers library (for BERT-based similarity scoring)
+- NumPy, Pandas
 
-2. Install the required Python packages:
-    ```sh
-    pip install -r requirements.txt
-    ```
+### Installation
 
-## Usage
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/your-username/automated-grading-software.git
+   cd automated-grading-software
+2. Install the required libraries:
+   ```bash
+   pip install -r requirements.txt
 
-### Running the Application
-1. Ensure your AWS credentials are configured. You can configure them using the AWS CLI:
-    ```sh
-    aws configure
-    ```
+### Contribution
 
-2. Run the Streamlit application:
-    ```sh
-    streamlit run main.py
-    ```
+Feel free to submit issues or pull requests to improve the project.
 
-## Files Description
+### License
 
-### `cv.py`
-Contains the computer vision-related functionalities, possibly for processing visual data.
-
-### `utils.py`
-Utility functions that support the main operations such as data preprocessing, helper functions, etc.
-
-### `main.py`
-The main entry point of the application. It sets up the Streamlit interface, handles user inputs, and displays results.
-
-### `Dockerfile`
-Defines the Docker image for the application. It includes all the necessary dependencies and setup for containerized deployment.
-
-## Docker Setup
-
-To build and run the application using Docker, follow these steps:
-
-1. Build the Docker image:
-    ```sh
-    docker build -t aws-bedrock-app .
-    ```
-
-2. Run the Docker container:
-    ```sh
-    docker run -p 8501:8501 aws-bedrock-app
-    ```
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+This project is licensed under the MIT License.
+ 
